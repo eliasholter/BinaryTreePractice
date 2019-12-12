@@ -59,23 +59,21 @@ namespace BinaryTreeProject
 
         public string SearchForNode(Node original, Node nodeOfInterest)
         {
-            Node compareTo = original;
-
-            if(compareTo.data == nodeOfInterest.data)
+            if(original.data == nodeOfInterest.data)
             {
                 return nodeOfInterest.data.ToString();
             }
-            if (compareTo == null)
+            if (original == null)
             {
                 return null;
             }
-            if (compareTo.data > nodeOfInterest.data)
+            if (original.data > nodeOfInterest.data)
             {
-                return SearchForNode(compareTo.right, nodeOfInterest);
+                return SearchForNode(original.right, nodeOfInterest);
             }
             else
             {
-                return SearchForNode(compareTo.left, nodeOfInterest);
+                return SearchForNode(original.left, nodeOfInterest);
             }
         }
     }
